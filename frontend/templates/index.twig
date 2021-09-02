@@ -1,5 +1,11 @@
 {{ include('partials/header.twig') }}
-
-    {{ text }}
+    <section class="{{ sectionName }}">
+        <h1>Hola</h1>
+        <ul>
+            {% for todo in data %}
+                <li>{{ todo.title }}</li>
+            {% endfor %}
+        </ul>
+    <section>
 
 {{ include('partials/footer.twig') }}
