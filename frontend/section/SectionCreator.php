@@ -9,7 +9,7 @@ class SectionCreator{
         $twig->addGlobal('is_dev', $_SERVER["SERVER_NAME"] === "localhost");
 
         $client = new GuzzleHttp\Client([
-            'base_uri' => 'https://jsonplaceholder.typicode.com/'
+            'base_uri' => 'https://phpstack-184606-1536976.cloudwaysapps.com/unicx/custom/'
         ]);
         $response =  $client->request('GET', $endpoint);
         $body = $response->getBody();
