@@ -1,4 +1,12 @@
 # earlybird front-end
+
+## install dependences
+```
+$ composer install
+
+$ npm install
+```
+
 ## modo dev
 
 ```
