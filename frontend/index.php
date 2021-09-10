@@ -8,5 +8,9 @@ $router->get('/', function() {
     new SectionCreator('example', 'sculptures?_limit=10000&_page=1', 'index.twig');
 });
 
+$router->get('/works', function() {
+    new SectionCreator('works', 'sculptures?_limit=10000&_page=1', 'works.twig');
+});
+
 $router->run();
 ?>

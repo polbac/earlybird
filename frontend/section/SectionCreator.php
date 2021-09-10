@@ -4,7 +4,7 @@ use GuzzleHttp\Client;
 
 class SectionCreator{
     function __construct($sectionName, $endpoint, $template) {
-        $loader = new \Twig\Loader\FilesystemLoader(realpath($_SERVER["DOCUMENT_ROOT"]) . '/templates');
+        $loader = new \Twig\Loader\FilesystemLoader(realpath($_SERVER["DOCUMENT_ROOT"]) . '/earlybird/frontend/templates');
         $twig = new \Twig\Environment($loader);
         $twig->addGlobal('is_dev', $_SERVER["SERVER_NAME"] === "localhost");
 
