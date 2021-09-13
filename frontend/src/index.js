@@ -1,3 +1,5 @@
-import {bla} from './modulo1'
-bla()
-console.log('hola mundo')
+import { Landing } from './sections/landing'
+
+if (document.querySelector('section.landing')) {
+    new Landing()
+}

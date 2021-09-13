@@ -1,11 +1,29 @@
 {{ include('partials/header.twig') }}
-    <section class="{{ sectionName }}">
-        <h1>Hola</h1>
-        <ul>
-            {% for todo in data %}
-                <li>{{ todo.title }}</li>
-            {% endfor %}
-        </ul>
+    
+    <section class="landing">
+        <div class="egg">
+            <img src="assets/img/egg1.png" />
+        </div>
+        <h2>
+            earlybird
+        </h2>
+        <div class="landing-legend column">
+            <p>
+                EarlybirdTM is an innovation and creative production
+                and entertainment studio specialized in creating
+                digital content and experiences as solutions to
+                brands challenges.
+            </p>
+            <div class='social'>
+                <div>
+                    GET SOCIAL
+                </div>
+                <a href='http://vimeo.com' target='_blank'>VIMEO</a>
+                <a href='http://instagram.com' target='_blank'>INSTAGRAM</a>
+                <a href='http://facebook.com' target='_blank'>FACEBOOK</a>
+                <a href='#' target='_blank'>CONTACT US</a>
+            </div>
+        </div>
     <section>
 
 {{ include('partials/footer.twig') }}

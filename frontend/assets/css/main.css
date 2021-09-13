@@ -1,5 +1,97 @@
 html,body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Neue Montreal', Arial, Helvetica, sans-serif;
     background: black;
     color: white;
+}
+
+p,h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: white;
+}
+
+/* commons */
+.column{
+    display: flex;
+    flex-direction: row;;
+}
+
+/* navigation & header */
+header{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    justify-content: space-between;
+}
+
+/* landing */
+.landing .egg{
+    height: 300vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.landing .egg::after{
+    content: "";
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+    top: 300vh;
+    position: absolute;
+}
+
+.landing .egg img{
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 30vh;
+    z-index: 2;
+}
+
+.landing-legend{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    font-family: 'Neue Montreal';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.landing-legend p{
+    font-size: 2rem;
+    max-width: 50%;
+}
+
+.landing-legend .social div,
+.landing-legend .social a{
+    display: block;
+    font-size: 0.8rem;
+}
+
+.landing h2{
+    font-family: 'Monument Extended';
+    text-align: center;
+    font-size: 15.2vw;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.landing header h1{
+    display: none;
 }
