@@ -7,6 +7,7 @@
         <h2>
             earlybird
         </h2>
+
         <div class="landing-legend column">
             <p>
                 EarlybirdTM is an innovation and creative production
@@ -24,6 +25,27 @@
                 <a href='#' target='_blank'>CONTACT US</a>
             </div>
         </div>
-    <section>
+    </section>
+
+    <section class="work">
+        <div class="categories">
+        <a data-category="all" href="">ALL</a><span>/</span>{% for category in data.categories %}<a data-category="{{ category.slug }}" href="?category={{ category.slug }}">{{ category.name }}</a><span>/</span>{% endfor %}
+        </div>
+
+        <div class="items">
+        {% for work in data.works %}
+            <article class="item" data-catagories="{{work.categories|join(',')}}">
+                <a href="work/{{ work.slug }}" >
+                    <span class="description-container">
+                        <img src="{{ work.thumb }}" width="100%" alt="{{ work.name }}"/>
+                        <p class= "description">{{ work.description }}</p>
+                    </span>
+                    <p>{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
+                </a>
+            </article>
+        {% endfor %}
+        </div>
+    </section>
+
 
 {{ include('partials/footer.twig') }}

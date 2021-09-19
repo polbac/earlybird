@@ -1,7 +1,16 @@
+:root {
+    --white-color: #ebe9e1;
+    --black-color: #030303;
+    
+    --section-margin: 40px;
+    --work-item-margin: 10px;
+  }
+
 html,body{
     font-family: 'Neue Montreal', Arial, Helvetica, sans-serif;
-    background: black;
-    color: white;
+    background: var(--black-color);
+    color: var(--white-color);
+    margin: 0;
 }
 
 p,h1,h2,h3,h4{
@@ -10,7 +19,8 @@ p,h1,h2,h3,h4{
 }
 
 a{
-    color: white;
+    color: var(--white-color);
+    text-decoration: none;
 }
 
 /* commons */
@@ -29,14 +39,23 @@ header{
 }
 
 /* landing */
+section.landing{
+    display: none;
+}
+
+section.landing.show{
+    display: block;
+}
+
 .landing .egg{
-    height: 300vh;
-    background: black;
-    position: absolute;
+    height: 200vh;
+    background: var(--black-color);
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
+    pointer-events: none;
 }
 
 .landing .egg::after{
@@ -64,10 +83,7 @@ header{
     margin-bottom: 20px;
     justify-content: space-between;
     font-family: 'Neue Montreal';
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    
 }
 
 .landing-legend p{
@@ -85,13 +101,79 @@ header{
     font-family: 'Monument Extended';
     text-align: center;
     font-size: 15.2vw;
-    position: fixed;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
     z-index: 1;
 }
-.landing header h1{
+
+
+/* work */
+
+section.work{
+    background: var(--white-color);
+    padding: var(--section-margin);
+    padding-top: 50px;
+
+    font-family: 'Favorit Mono';
+}
+section.work .categories{
+    color: var(--black-color);
+    margin-bottom: 20px;
+}
+
+section.work .categories a{
+    font-size: 1.5rem;
+    color: var(--black-color);
+}
+
+section.work .categories a.active{
+    text-decoration: underline;
+}
+
+section.work .categories span:last-of-type{
     display: none;
+}
+
+section.work .items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section.work .items .item{
+    width: calc(50% - var(--work-item-margin));
+    margin-bottom: var(--work-item-margin);
+    position: relative;
+}
+
+section.work .items .item a{
+    color: var(--black-color);
+}
+
+section.work .items .item .description-container{
+    position: relative;
+    display: block;
+}
+
+section.work .items .item.hidden{
+    display: none;
+}
+
+section.work .items .item img{
+    display: block;
+}
+
+section.work .items .item:hover .description{
+    opacity: 1;
+}
+
+section.work .items .item .description{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color:var(--white-color);
+    padding: 50px 20px;
+    opacity: 0;
+    transition: 1s all ease;
 }
