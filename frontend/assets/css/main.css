@@ -46,8 +46,8 @@ h1{
 header{
     position: fixed;
     top: 20px;
-    left: 40px;
-    right: 40px;
+    left: var(--section-margin);
+    right: var(--section-margin);
     justify-content: space-between;
     z-index: 99;
 }
@@ -98,8 +98,8 @@ section.landing.show{
 }
 
 .landing-legend{
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: var(--section-margin);
+    margin-right: var(--section-margin);
     margin-bottom: 20px;
     justify-content: space-between;
     font-family: 'Neue Montreal';
@@ -206,8 +206,8 @@ section.work .items .item .description{
     padding-top: 40px;
     left: 0;
     right: 0;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: var(--section-margin);
+    padding-right: var(--section-margin);
     bottom: 0;
     background: var(--white-color);
     color: var(--black-color);
@@ -242,4 +242,40 @@ section.work .items .item .description{
     background: transparent;
     width: 300px;
     margin-right: 10px;
+}
+
+/* about */
+
+section.about{
+    padding-left: var(--section-margin);
+    padding-right: var(--section-margin);
+    padding-top: 100px;
+}
+
+section.about > div{
+    flex: 1;
+    padding-right: 100px;
+}
+
+section.about > div h3{
+    margin-bottom: 50px;
+}
+
+/* footer */
+footer{
+    padding-left: var(--section-margin);
+    padding-right: var(--section-margin);
+    border-top: 1px solid var(--white-color);
+    border-bottom: 1px solid var(--white-color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+}
+
+footer div{
+    width: 100px;
+}
+
+footer div.copy{
+    flex: 1;
 }
