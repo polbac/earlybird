@@ -45,16 +45,26 @@ h1{
 /* navigation & header */
 header{
     position: fixed;
-    top: 20px;
+    top: 0;
+    padding-top: 20px;
     left: var(--section-margin);
     right: var(--section-margin);
     justify-content: space-between;
     z-index: 99;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+
+    
 }
 
 header.black a,
 header.black{
     color: var(--black-color);
+}
+
+header.black{
+    background: rgb(235,233,225);
+    background: linear-gradient(180deg, rgba(235,233,225,1) 30%, rgba(235,233,225,0) 100%);
 }
 
 /* landing */
@@ -152,39 +162,51 @@ section.work .categories span:last-of-type{
     display: none;
 }
 
+section.detail .items,
 section.work .items{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-section.work .items .item{
+section.work .items .item,
+section.detail .items .item{
     width: calc(50% - var(--work-item-margin));
     margin-bottom: var(--work-item-margin);
     position: relative;
 }
 
+section.detail .items .item{
+    width: calc(33.33% - var(--work-item-margin));
+}
+
+section.detail .items .item a,
 section.work .items .item a{
     color: var(--black-color);
 }
 
+section.detail .items .item .description-container,
 section.work .items .item .description-container{
     position: relative;
     display: block;
 }
 
+section.detail .items .item.hidden,
 section.work .items .item.hidden{
     display: none;
 }
 
+section.detail .items .item img,
 section.work .items .item img{
     display: block;
 }
 
+section.detail .items .item:hover .description,
 section.work .items .item:hover .description{
     opacity: 1;
 }
 
+section.detail .items .item .description,
 section.work .items .item .description{
     position: absolute;
     top: 0;
@@ -278,4 +300,32 @@ footer div{
 
 footer div.copy{
     flex: 1;
+}
+
+/* detail */
+section.detail .container{
+    padding-top: 5px;
+}
+
+section.detail .container{
+    padding-left: var(--section-margin);
+    padding-right: var(--section-margin);   
+}
+
+section.detail .body{
+    column-count: 3;
+}
+
+section.detail video{
+    width: 100%;
+}
+
+section.detail .related{
+    border-top: 1px solid var(--white-color);
+    padding-top: 40px;
+    margin-top: 40px;
+}
+
+section.detail .related h4{
+    margin-bottom: 20px;   
 }

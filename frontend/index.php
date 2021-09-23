@@ -12,5 +12,9 @@ $router->get('/about', function() {
     new SectionCreator('about black', 'assets/mocks/about.json', 'about.twig');
 });
 
+$router->get('/work/{workSlug}', function($workSlug) {
+    new SectionCreator('detail black', 'assets/mocks/detail.json', 'detail.twig');
+});
+
 $router->run();
 ?>

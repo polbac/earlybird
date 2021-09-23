@@ -1,0 +1,32 @@
+{{ include('partials/header.twig') }}
+    
+    <section class="detail">
+        <div class='container'>
+        <h3>{{ data.detail.title }}</h3>
+        <video src='{{ initPath }}{{ data.detail.video }}'></video>
+        <p class='body'>{{ data.detail.body }}</p>
+        </div>
+        
+        <div class='related'>
+            <div class='container'>
+                <h4>MORE WORK</h4>
+
+                <div class="items">
+                {% for work in data.detail.related %}
+                    <article class="item">
+                        <a href="{{ work.slug }}" >
+                            <span class="description-container">
+                                <img src="{{ initPath }}/{{ work.thumb }}" width="100%" alt="{{ work.name }}"/>
+                                <p class= "description">{{ work.description }}</p>
+                            </span>
+                            <p>{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
+                        </a>
+                    </article>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{{ include('partials/footer.twig') }}
