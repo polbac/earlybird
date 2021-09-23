@@ -3,6 +3,7 @@ export class Landing{
     constructor(){
         this.image = document.querySelector('.egg img')
         this.sectionWork = document.querySelector('section.work')
+        this.header = document.querySelector('header')
 
         if (!this.shouldSkipLanding()) {
             document.addEventListener('scroll', this.render.bind(this))
@@ -31,6 +32,9 @@ export class Landing{
         
         if (this.sectionWork.getBoundingClientRect().y <= 0) {
             this.hiddeLanding()
+            this.header.classList.add('black')
+        } else {
+            this.header.classList.remove('black')
         }
 
         if (imageIndex >= 4) {

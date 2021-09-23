@@ -7,6 +7,7 @@ class SectionCreator{
         $loader = new \Twig\Loader\FilesystemLoader(realpath($_SERVER["DOCUMENT_ROOT"]) . '/frontend/templates');
         $twig = new \Twig\Environment($loader);
         $twig->addGlobal('is_dev', $_SERVER["SERVER_NAME"] === "localhost");
+        $twig->addGlobal('initPath', "/frontend");
 
         $client = new GuzzleHttp\Client([
             'base_uri' => 'http://localhost:3000/frontend/'

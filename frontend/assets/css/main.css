@@ -6,11 +6,19 @@
     --work-item-margin: 10px;
   }
 
+.hidden{
+    display: none;
+}
+
 html,body{
     font-family: 'Neue Montreal', Arial, Helvetica, sans-serif;
     background: var(--black-color);
     color: var(--white-color);
     margin: 0;
+}
+
+body.prevent-scroll{
+    overflow: hidden;
 }
 
 p,h1,h2,h3,h4{
@@ -23,6 +31,11 @@ a{
     text-decoration: none;
 }
 
+/* branding */
+h1{
+    font-family: 'Monument Extended';
+}
+
 /* commons */
 .column{
     display: flex;
@@ -33,9 +46,15 @@ a{
 header{
     position: fixed;
     top: 20px;
-    left: 20px;
-    right: 20px;
+    left: 40px;
+    right: 40px;
     justify-content: space-between;
+    z-index: 99;
+}
+
+header.black a,
+header.black{
+    color: var(--black-color);
 }
 
 /* landing */
@@ -56,6 +75,7 @@ section.landing.show{
     right: 0;
     z-index: 2;
     pointer-events: none;
+    z-index: 100;
 }
 
 .landing .egg::after{
@@ -78,8 +98,8 @@ section.landing.show{
 }
 
 .landing-legend{
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 20px;
     justify-content: space-between;
     font-family: 'Neue Montreal';
@@ -172,8 +192,54 @@ section.work .items .item .description{
     bottom: 0;
     right: 0;
     background: rgba(0,0,0,0.8);
-    color:var(--white-color);
+    color: var(--white-color);
     padding: 50px 20px;
     opacity: 0;
     transition: 1s all ease;
+}
+
+
+/* contact */
+#contact-section{
+    position: fixed;
+    top: 0;
+    padding-top: 40px;
+    left: 0;
+    right: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    bottom: 0;
+    background: var(--white-color);
+    color: var(--black-color);
+    display: none;
+}
+
+#contact-section.open{
+    display: block;
+}
+
+#contact-section .by-email{
+    font-size: 0.75rem;
+    margin-bottom: 50px;
+}
+#contact-section .form-contact{
+    margin-top: 50px;
+}
+
+#contact-section .close{
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#contact-section a{
+    color: var(--black-color);
+}
+
+#contact-section input{
+    border: 0;
+    border-bottom: 1px solid var(--black-color);
+    background: transparent;
+    width: 300px;
+    margin-right: 10px;
 }
