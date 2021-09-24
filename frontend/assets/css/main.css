@@ -264,6 +264,13 @@ section.work .items .item .description{
     background: transparent;
     width: 300px;
     margin-right: 10px;
+    outline: none;
+}
+
+#contact-section .send-button{
+    cursor: pointer;
+    border: 0;
+    background: transparent;
 }
 
 /* about */

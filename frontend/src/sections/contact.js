@@ -1,17 +1,20 @@
 export class Contact{
     constructor() {
         this.sectionContact = document.querySelector('#contact-section')
-        console.log(this.sectionContact)
+        this.buttonSend = document.querySelector('#contact-section .send-button')
+        
         this.buttonContact = document.querySelector('.contact-nav')
         this.header = document.querySelector('header')
         this.buttonClose = this.sectionContact.querySelector('.close')
 
         this.buttonContact.addEventListener('click', this.toggle.bind(this))
         this.buttonClose.addEventListener('click', this.toggle.bind(this))
+        //this.buttonSend.addEventListener('click', this.send.bind(this))
     }
 
     toggle(e) {
         e.preventDefault()
+
         if (this.sectionContact.classList.contains('open')) {
             this.sectionContact.classList.remove('open')
             if (document.querySelector('body').classList.contains('black')) {
@@ -25,5 +28,9 @@ export class Contact{
         
         document.querySelector('body').classList.toggle('prevent-scroll')
         return false
+    }
+
+    send() {
+
     }
 }
