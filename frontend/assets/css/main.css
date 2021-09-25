@@ -2,12 +2,18 @@
     --white-color: #ebe9e1;
     --black-color: #030303;
     
-    --section-margin: 40px;
-    --work-item-margin: 10px;
+    --section-margin: 2.5vw;
+    --work-item-margin: 2vh;
   }
 
 .hidden{
     display: none;
+}
+
+nav a:hover,
+body.landing .work-nav,
+body.about .about-nav{
+    font-weight: bold;
 }
 
 html,body{
@@ -15,6 +21,8 @@ html,body{
     background: var(--black-color);
     color: var(--white-color);
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body.prevent-scroll{
@@ -35,7 +43,9 @@ a{
 h1{
     font-family: 'Monument Extended';
 }
-
+h1 a{
+    transition: color 1s ease;
+}
 /* commons */
 .column{
     display: flex;
@@ -47,14 +57,26 @@ header{
     position: fixed;
     top: 0;
     padding-top: 20px;
-    left: var(--section-margin);
-    right: var(--section-margin);
+    left: 0;
+    right: 0;
+    padding-left: var(--section-margin);
+    padding-right: var(--section-margin);
     justify-content: space-between;
     z-index: 99;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
-
+    transition: color 1s ease, background-color 1s ease;
     
+}
+
+header nav a{
+    font-family: 'Favorit Mono';
+    font-size: 1.25vw;
+    margin-right: 20px;
+}
+
+header nav a.active{
+    font-weight: bold;
 }
 
 header.black a,
@@ -77,7 +99,8 @@ section.landing.show{
 }
 
 .landing .egg{
-    height: 200vh;
+    height: 100vh;
+    margin-bottom: 100vh;
     background: var(--black-color);
     position: relative;
     top: 0;
@@ -110,21 +133,29 @@ section.landing.show{
 .landing-legend{
     margin-left: var(--section-margin);
     margin-right: var(--section-margin);
-    margin-bottom: 20px;
+    margin-bottom: var(--section-margin);
     justify-content: space-between;
-    font-family: 'Neue Montreal';
     
 }
 
 .landing-legend p{
-    font-size: 2rem;
+    font-size: 30px;
     max-width: 50%;
 }
 
 .landing-legend .social div,
 .landing-legend .social a{
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.87vw;
+    margin-bottom: 1.5vh;
+}
+
+.landing-legend .social div{
+    margin-bottom: 2vh;
+}
+
+.landing-legend .social{
+    font-family: 'Favorit Mono';
 }
 
 .landing h2{
@@ -146,16 +177,21 @@ section.work{
 }
 section.work .categories{
     color: var(--black-color);
-    margin-bottom: 20px;
+    margin-top: 1vh;
+    margin-bottom: 2.5vh;
+    font-weight: 200;
+    font-size: 1.75vw;
 }
 
 section.work .categories a{
-    font-size: 1.5rem;
     color: var(--black-color);
+    font-family: 'Monument Extended';
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 section.work .categories a.active{
-    text-decoration: underline;
+    font-weight: normal;
 }
 
 section.work .categories span:last-of-type{
@@ -172,7 +208,6 @@ section.work .items{
 section.work .items .item,
 section.detail .items .item{
     width: calc(50% - var(--work-item-margin));
-    margin-bottom: var(--work-item-margin);
     position: relative;
 }
 
@@ -183,6 +218,19 @@ section.detail .items .item{
 section.detail .items .item a,
 section.work .items .item a{
     color: var(--black-color);
+}
+
+section.work .items .item p.work-title,
+section.detail .items .item p.work-title{
+    padding-top: var(--work-item-margin);
+    padding-bottom: var(--work-item-margin);
+    text-transform: uppercase;
+    font-size: 1.2vw;
+}
+
+section.detail .items .item p.description{
+    font-size: 1.2vw;
+    line-height: 1.8vw;
 }
 
 section.detail .items .item .description-container,
@@ -215,9 +263,12 @@ section.work .items .item .description{
     right: 0;
     background: rgba(0,0,0,0.8);
     color: var(--white-color);
-    padding: 50px 20px;
+    padding: 50px 30px;
     opacity: 0;
     transition: 1s all ease;
+    font-family: 'Neue Montreal';
+    line-height: 2.5vw;
+    font-size: 2vw;
 }
 
 
@@ -234,18 +285,25 @@ section.work .items .item .description{
     background: var(--white-color);
     color: var(--black-color);
     display: none;
+    
+    font-family: 'Monument Extended';
+    font-size: 2vw;
 }
 
 #contact-section.open{
     display: block;
+    
 }
 
 #contact-section .by-email{
     font-size: 0.75rem;
     margin-bottom: 50px;
+    font-family: 'Favorit Mono';
 }
+
 #contact-section .form-contact{
     margin-top: 50px;
+    
 }
 
 #contact-section .close{
@@ -271,6 +329,8 @@ section.work .items .item .description{
     cursor: pointer;
     border: 0;
     background: transparent;
+    font-family: 'Monument Extended';
+    font-size: 2vw;
 }
 
 /* about */
@@ -284,21 +344,72 @@ section.about{
 section.about > div{
     flex: 1;
     padding-right: 100px;
+    padding-bottom: 150px;
 }
 
 section.about > div h3{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    font-family: 'Monument Extended';
+    font-size: 3.5vw;
+    font-weight: normal;
+}
+
+section.about span{
+    font-family: 'Favorit Mono';    
+    font-size: 1.3vw;
+}
+
+section.about .we p{
+    font-size: 1.7vw;
+}
+
+section.about .services{
+    font-family: 'Monument Extended';
+    font-weight: 300;
+    font-size: 1.75vw;
 }
 
 /* footer */
 footer{
     padding-left: var(--section-margin);
     padding-right: var(--section-margin);
-    border-top: 1px solid var(--white-color);
-    border-bottom: 1px solid var(--white-color);
+    border-top: 1px solid var(--black-color);
+    border-bottom: 1px solid var(--black-color);
     padding-top: 40px;
     padding-bottom: 40px;
-    margin-top: 40px;
+    font-family: 'Favorit Mono';
+    background: var(--white-color);
+    color: var(--black-color);
+    font-size: 0.87vw;
+}
+
+footer a{
+    color: var(--black-color);
+}
+
+body.black footer,
+body.black footer a{
+    color: var(--white-color);
+}
+
+body.black footer{
+    border-top: 1px solid var(--white-color);
+}
+
+footer .egg-black{
+    display: none;
+}
+
+body.black footer .egg-white{
+    display: none;
+}
+
+body.black footer .egg-black{
+    display: block;
+}
+
+body.black footer{
+    background: var(--black-color);
 }
 
 footer div{
@@ -309,9 +420,17 @@ footer div.copy{
     flex: 1;
 }
 
+footer p{
+    margin-bottom: 20px;
+}
+
+footer img{
+    margin-top: 30px;
+}
+
 /* detail */
-section.detail .container{
-    padding-top: 5px;
+section.detail > .container{
+    padding-top: 110px;
 }
 
 section.detail .container{
@@ -319,8 +438,13 @@ section.detail .container{
     padding-right: var(--section-margin);   
 }
 
+section.detail h3{
+    font-family: 'Monument Extended';
+    font-size: 2vw;
+}
+
 section.detail .body{
-    column-count: 3;
+    column-count: 2;
 }
 
 section.detail video{
@@ -329,10 +453,20 @@ section.detail video{
 
 section.detail .related{
     border-top: 1px solid var(--white-color);
-    padding-top: 40px;
-    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
-section.detail .related h4{
-    margin-bottom: 20px;   
+section.detail .items .item p.work-title{
+    color: var(--white-color);
+    font-family: 'Favorit Mono';
+    font-size: 0.77vw;
+}
+
+section.detail h4{
+    margin-bottom: 10px;   
+    color: var(--white-color);
+    font-family: 'Favorit Mono';
+    margin-left: var(--section-margin);
+    font-weight: normal;
+    margin-top: 50px;
 }

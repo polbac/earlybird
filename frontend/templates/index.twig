@@ -10,7 +10,7 @@
 
         <div class="landing-legend column">
             <p>
-                EarlybirdTM is an innovation and creative production
+                Earlybird&trade; is an innovation and creative production
                 and entertainment studio specialized in creating
                 digital content and experiences as solutions to
                 brands challenges.
@@ -40,7 +40,7 @@
                         <img src="{{ work.thumb }}" width="100%" alt="{{ work.name }}"/>
                         <p class= "description">{{ work.description }}</p>
                     </span>
-                    <p>{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
+                    <p class="work-title">{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
                 </a>
             </article>
         {% endfor %}

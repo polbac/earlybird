@@ -10,7 +10,7 @@ class SectionCreator{
         $twig->addGlobal('initPath', "/frontend");
 
         $client = new GuzzleHttp\Client([
-            'base_uri' => 'http://localhost:3000/frontend/'
+            'base_uri' => 'http://localhost:8888/frontend/'
         ]);
 
         $body = [];
@@ -23,7 +23,7 @@ class SectionCreator{
         
         echo $twig->render($template, [
             'sectionName' => $sectionName,
-            'data' => $body
+            'data' => $body,
         ]);
     }
 }

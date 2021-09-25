@@ -7,19 +7,23 @@
         <p class='body'>{{ data.detail.body }}</p>
         </div>
         
+        <h4>MORE WORK</h4>
+        
         <div class='related'>
+            
             <div class='container'>
-                <h4>MORE WORK</h4>
+                
 
                 <div class="items">
                 {% for work in data.detail.related %}
                     <article class="item">
                         <a href="{{ work.slug }}" >
+                            <p class="work-title">{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
                             <span class="description-container">
                                 <img src="{{ initPath }}/{{ work.thumb }}" width="100%" alt="{{ work.name }}"/>
                                 <p class= "description">{{ work.description }}</p>
                             </span>
-                            <p>{{ loop.index < 10 ? 0 : null }}{{loop.index}}. {{ work.name }}</p>
+                            
                         </a>
                     </article>
                 {% endfor %}
