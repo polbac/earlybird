@@ -11,7 +11,14 @@ if (document.querySelector('section.work')) {
 }
 
 new Contact()
+let mobileOpen = false
+document.querySelector('#mobile-nav')
+    .addEventListener('click', () => {
+        document.querySelector('header').classList.toggle('mobile-open')
 
+        mobileOpen = !mobileOpen
+        
+    })
 document.querySelector('.work-nav')
     .addEventListener('click', () => {
         localStorage.setItem(HIDDEN_LANDING_KEY, 'true')

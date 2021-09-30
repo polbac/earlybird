@@ -1,5 +1,6 @@
 export class Contact{
     constructor() {
+        this.ENDPOINT = '/mail-contact'
         this.sectionContact = document.querySelector('#contact-section')
         this.buttonSend = document.querySelector('#contact-section .send-button')
         
@@ -9,7 +10,7 @@ export class Contact{
 
         this.buttonContact.addEventListener('click', this.toggle.bind(this))
         this.buttonClose.addEventListener('click', this.toggle.bind(this))
-        //this.buttonSend.addEventListener('click', this.send.bind(this))
+        this.buttonSend.addEventListener('click', this.send.bind(this))
     }
 
     toggle(e) {
@@ -30,7 +31,16 @@ export class Contact{
         return false
     }
 
-    send() {
+    send(e) {
+        e.preventDefault()
+        
+        const emailInput = document.querySelector('#email-field')
 
+        fetch(this.ENDPOINT, {
+            method: 'POST',
+            body: JSON.parse({emailInput})
+        })
+
+        return false
     }
 }
