@@ -205,6 +205,11 @@ section.work .items{
     justify-content: space-between;
 }
 
+section.detail h3{
+    display: flex;
+    justify-content: space-between;
+}
+
 section.work .items .item,
 section.detail .items .item{
     width: calc(50% - var(--work-item-margin));
@@ -475,6 +480,14 @@ section.detail h4{
     display: none;
 }
 
+nav img{
+    display: none;
+}
+
+.nav-footer{
+    display: none;
+}
+
 @media (max-width:680px){
     .landing-legend{
         flex-direction: column;
@@ -653,7 +666,105 @@ section.detail h4{
         display: block;
     }
 
+    header.mobile-open nav img{
+        display: block;
+    }
+
     section.about{
         flex-direction: column;
+    }
+
+    body.black #mobile-nav .line{
+        background-color: white;
+    }
+
+    body.black h1{
+        display: block;
+    }
+
+    section.about{
+        padding-top: 50px;
+    }
+
+    section.about > div h3{
+        font-size: 6.5vw;
+    }
+
+    section.about > div{
+        padding-right: 0;
+        position: relative;
+        padding-bottom: 30px;
+    }
+
+    section.about .we p{
+        font-size: 3.7vw;
+    }
+
+    section.about > div h3{
+        margin-bottom: 0;
+    }
+
+    section.about > div span{
+        position: absolute;
+        top: 10px;
+        right: 0;
+        font-size: 3vw;
+    }
+
+    section.about .services{
+        font-size: 3vw;
+    }
+
+    nav img{
+        width: 100px;
+        margin-top: 110px;
+    }
+
+    .nav-footer a,.nav-footer p{
+        font-size: 2vw;
+        font-family: 'Favorit Mono';
+        margin-right: 0;
+    }
+
+    .nav-footer{
+        position: fixed;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        border-top: 1px solid white;
+        padding-top: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-between;
+        display: block;
+    }
+
+    .by-email{
+        display: none;
+    }
+
+    #contact-section{
+        font-size: 6vw;
+        text-align: center;
+    }
+    .contact-text br{
+        display: none;
+    }
+
+    .contact-text .contact-info-text{
+        display: block;
+        font-size: 5vw;
+    }
+
+    h1{
+        display: none;
+    }
+
+    .column.black h1{
+        display: block;
+    }
+    .column.black h1 a{
+        
+        color: var(--black-color);
     }
 }

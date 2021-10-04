@@ -21,10 +21,11 @@ export class Contact{
             if (document.querySelector('body').classList.contains('black')) {
                 this.header.classList.remove('black')
             }
-
         } else {
             this.sectionContact.classList.add('open')
             this.header.classList.add('black')
+
+            document.querySelector('header').classList.remove('mobile-open')
         }
         
         document.querySelector('body').classList.toggle('prevent-scroll')

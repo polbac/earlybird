@@ -2,7 +2,15 @@
     
     <section class="detail">
         <div class='container'>
-        <h3>{{ data.detail.title }}</h3>
+        <h3>
+            <span>{{ data.detail.title }}</span>
+            <span>
+                <a href="../">
+                    <img src="../assets/img/close.svg" width="25" />
+                </a>
+            </span>
+
+        </h3>
         <video src='{{ initPath }}{{ data.detail.video }}'></video>
         <p class='body'>{{ data.detail.body }}</p>
         </div>
