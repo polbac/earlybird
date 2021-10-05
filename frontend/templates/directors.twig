@@ -1,0 +1,18 @@
+{{ include('partials/header.twig') }}
+    
+    <section class="directors column">
+        <div class='photo'>
+            <img src="{{data.directors[0].image}}" width="100%"/>
+        </div>
+        <div class='directors-list'>
+
+             {% for director in data.directors %}
+            <a class="item {% if loop.index == 1 %}active{% endif %}" data-image="{{director.image}}" href="director/{{ director.slug }}">
+                {{director.name}}
+            </a>
+        {% endfor %}
+        </div>
+    </section>
+
+
+{{ include('partials/footer.twig') }}

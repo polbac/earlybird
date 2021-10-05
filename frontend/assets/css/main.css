@@ -4,14 +4,25 @@
     
     --section-margin: 2.5vw;
     --work-item-margin: 2vh;
+
+    --plyr-color-main: #ebe9e1;
+    
   }
 
+  .plyr__control svg{
+      fill: #030303 !important;
+  }
 .hidden{
     display: none;
 }
 
+body{
+    min-height: 100vh;
+}
+
 nav a:hover,
 body.landing .work-nav,
+body.directors .directors-nav,
 body.about .about-nav{
     font-weight: bold;
 }
@@ -198,6 +209,7 @@ section.work .categories span:last-of-type{
     display: none;
 }
 
+section.director-detail .items,
 section.detail .items,
 section.work .items{
     display: flex;
@@ -205,26 +217,32 @@ section.work .items{
     justify-content: space-between;
 }
 
-section.detail h3{
+section.detail h3,
+section.director-detail h3{
     display: flex;
     justify-content: space-between;
 }
 
 section.work .items .item,
+section.director-detail .items .item,
 section.detail .items .item{
     width: calc(50% - var(--work-item-margin));
     position: relative;
 }
 
-section.detail .items .item{
+section.director-detail .items .item,
+section.detail .items .item,
+section.director-detail .items .item{
     width: calc(33.33% - var(--work-item-margin));
 }
 
+section.director-detail .items .item a,
 section.detail .items .item a,
 section.work .items .item a{
     color: var(--black-color);
 }
 
+section.director-detail .items .item p.work-title,
 section.work .items .item p.work-title,
 section.detail .items .item p.work-title{
     padding-top: var(--work-item-margin);
@@ -233,32 +251,38 @@ section.detail .items .item p.work-title{
     font-size: 1.2vw;
 }
 
+section.director-detail .items .item p.description,
 section.detail .items .item p.description{
     font-size: 1.2vw;
     line-height: 1.8vw;
 }
 
+section.director-detail .items .item .description-container,
 section.detail .items .item .description-container,
 section.work .items .item .description-container{
     position: relative;
     display: block;
 }
 
+section.director-detail .items .item.hidden,
 section.detail .items .item.hidden,
 section.work .items .item.hidden{
     display: none;
 }
 
+section.director-detail .items .item img,
 section.detail .items .item img,
 section.work .items .item img{
     display: block;
 }
 
+section.director-detail .items .item:hover .description,
 section.detail .items .item:hover .description,
 section.work .items .item:hover .description{
     opacity: 1;
 }
 
+section.director-detail .items .item .description,
 section.detail .items .item .description,
 section.work .items .item .description{
     position: absolute;
@@ -434,39 +458,68 @@ footer img{
 }
 
 /* detail */
+section.director-detail > .container,
 section.detail > .container{
     padding-top: 110px;
 }
 
+section.director-detail .container,
 section.detail .container{
     padding-left: var(--section-margin);
     padding-right: var(--section-margin);   
 }
 
+section.director-detail h3,
 section.detail h3{
     font-family: 'Monument Extended';
     font-size: 2vw;
 }
 
+section.director-detail .video-wrapper{
+    justify-content: space-between;
+}
+section.director-detail .video-wrapper .plyr{
+    width: 55%;
+}
+
+section.director-detail .video-wrapper .body{
+    width: 40%;
+}
+
+section.director-detail h3{
+    font-size: 9vw;
+}
+
+section.director-detail .body{
+    column-count: 1;
+}
 section.detail .body{
     column-count: 2;
 }
 
+section.director-detail video,
 section.detail video{
     width: 100%;
 }
 
+section.director-detail .related,
 section.detail .related{
     border-top: 1px solid var(--white-color);
     margin-bottom: 50px;
 }
 
+section.director-detail .related{
+    border: 0;
+}
+
+section.director-detail .items .item p.work-title,
 section.detail .items .item p.work-title{
     color: var(--white-color);
     font-family: 'Favorit Mono';
     font-size: 0.77vw;
 }
 
+section.director-detail h4,
 section.detail h4{
     margin-bottom: 10px;   
     color: var(--white-color);
@@ -486,6 +539,47 @@ nav img{
 
 .nav-footer{
     display: none;
+}
+
+#contact-success,
+#contact-error{
+    display: none;
+}
+
+#contact-success{
+    margin-top: 40px;
+}
+
+html.directors,
+body.directors{
+    background: var(--white-color);
+}
+
+section.directors{
+    color: var(--black-color);
+    padding-top: 100px;
+    margin-left: var(--section-margin);
+    margin-right: var(--section-margin);
+}
+
+section.directors .photo{
+    width: 48%;
+}
+
+.directors-list{
+    display: flex;
+    flex-direction: column;
+}
+.directors-list a:hover,.directors-list a.active{
+    font-weight: 400;
+}
+.directors-list a{
+    color: var(--black-color);
+    font-family: 'Monument Extended';
+    font-weight: 300;
+    font-size: 4vw;
+    line-height: 4vw;
+    padding-left: 20px;
 }
 
 @media (max-width:680px){
@@ -542,6 +636,10 @@ nav img{
         margin-right: 20px;
         font-weight: 300;
         margin-bottom: 5px;
+    }
+
+    .directors-list a{
+        line-height: 3vh;
     }
     
     header{
@@ -612,6 +710,7 @@ nav img{
     .open#mobile-nav .line{
         background: var(--white-color);
     }
+
     section.detail h3{
         font-size: 4vw;
     }
@@ -632,6 +731,7 @@ nav img{
         width: calc(50% - var(--work-item-margin));
     }
 
+    section.director-detail .items .item p.work-title,
     section.detail .items .item p.work-title{
         font-size: 3vw;
     }
@@ -767,4 +867,57 @@ nav img{
         
         color: var(--black-color);
     }
+
+    #contact-section input{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-family: 'Monument Extended';
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-bottom: 9px;
+        text-align: center;
+    }
+
+    #contact-section .send-button{
+        font-size: 6vw;
+    }
+
+    #contact-section .contact-text .sendus{
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    #contact-section br{
+        display: none;
+    }
+
+    section.directors{
+        padding-top: 70px;
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+    }
+
+    section.directors .photo{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .video-wrapper{
+        flex-direction: column;
+    }
+
+    section.director-detail .video-wrapper .body,
+    section.director-detail .video-wrapper video{
+        width: 100%;
+    }
+    section.director-detail .video-wrapper .body{
+        margin-bottom: 30px;
+    }
+
+    section.director-detail .items .item{
+        width: 100%;
+    }
+    
 }

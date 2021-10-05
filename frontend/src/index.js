@@ -1,6 +1,8 @@
 import { Landing, HIDDEN_LANDING_KEY } from './sections/landing'
 import { Work } from './sections/work'
 import { Contact } from './sections/contact'
+import { Directors } from './sections/directors'
+import Plyr from 'plyr';
 
 if (document.querySelector('section.landing')) {
     new Landing()
@@ -8,6 +10,10 @@ if (document.querySelector('section.landing')) {
 
 if (document.querySelector('section.work')) {
     new Work()
+}
+
+if (document.querySelector('section.directors')) {
+    new Directors()
 }
 
 new Contact()
@@ -25,3 +31,13 @@ document.querySelector('.work-nav')
     })
 
     localStorage.removeItem(HIDDEN_LANDING_KEY)
+
+
+const video = document.querySelector("video")
+
+if (video) {
+    const player = new Plyr('video', {
+        controls: ['play-large']
+    });
+
+}

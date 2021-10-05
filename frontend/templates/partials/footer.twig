@@ -5,7 +5,7 @@
             </div>
             <p class="by-email">BY EMAIL</p>
             <p class="contact-text">
-                SEND US A MESSAGE<br/>
+                <span class='sendus'>SEND US A MESSAGE</span><br/>
                 <a href="hi@earlybird.com" class="contact-info-text">HI@EARLYBIRD.COM</a><br/><br/>
                 <span class="contact-info-text">MÉXICO CITY, 06100<br/></span>
             </p>
@@ -13,7 +13,16 @@
             <form class="contact-text form-contact">
                 OR SUSCRIBE<br/>
                 <input type="email" placeholder="name@email.com" required id="email-field"/><button type="submit" class='send-button'>SEND</button>
+            
+                
+                <div id="contact-error">
+                    An error occurred try again
+                </div>
             </form>
+
+            <div id="contact-success">
+                    We will contact you shortly
+                </div>
         </aside>
 
         <footer class='column'>

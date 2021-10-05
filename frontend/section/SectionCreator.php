@@ -3,11 +3,12 @@
 use GuzzleHttp\Client;
 
 class SectionCreator{
-    function __construct($sectionName, $endpoint, $template) {
+    function __construct($sectionName, $endpoint, $template, $menuBlack) {
         $loader = new \Twig\Loader\FilesystemLoader(realpath($_SERVER["DOCUMENT_ROOT"]) . '/frontend/templates');
         $twig = new \Twig\Environment($loader);
         $twig->addGlobal('is_dev', $_SERVER["SERVER_NAME"] === "localhost");
         $twig->addGlobal('initPath', "/frontend");
+        $twig->addGlobal('isWhite', $menuBlack);
 
         $client = new GuzzleHttp\Client([
             'base_uri' => 'http://localhost:8888/frontend/'

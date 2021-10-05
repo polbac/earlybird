@@ -34,13 +34,20 @@ export class Contact{
 
     send(e) {
         e.preventDefault()
-        
-        const emailInput = document.querySelector('#email-field')
+        document.querySelector('#contact-error').style.display = 'none'
+        const emailInput = document.querySelector('#email-field').value
 
-        fetch(this.ENDPOINT, {
+        /* fetch(this.ENDPOINT, {
             method: 'POST',
             body: JSON.parse({emailInput})
         })
+        .then(success => { */
+            document.querySelector('.form-contact').style.display = 'none'
+            document.querySelector('#contact-success').style.display = 'block'
+        /* })
+        .catch(error => {
+            document.querySelector('#contact-error').style.display = 'block'
+        }) */
 
         return false
     }

@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="{{initPath}}/assets/fonts/stylesheet.css">
         <link rel="stylesheet" href="{{initPath}}/assets/css/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
 
     </head>
 
@@ -14,9 +15,10 @@
 
     <body class="{{sectionName}}">
 
-    <header class="column">
+    <header class="column {% if isWhite %} black {% endif %}">
         <nav>
             <a href='{{initPath}}/' class='work-nav'>WORK</a>
+            <a href='{{initPath}}/directors' class='directors-nav'>DIRECTORS</a>
             <a href='{{initPath}}/about' class='about-nav'>ABOUT</a>
             <a href='{{initPath}}/cntact' class='contact-nav'>CONTACT</a>
             <img src="{{initPath}}/assets/img/footer-egg-white.png" />

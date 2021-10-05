@@ -1,0 +1,14 @@
+{
+    "directors": [
+        {
+            "slug": "bardia-zeinali",
+            "name": "BARDIA ZEINALI",
+            "image": "assets/img/directors.png"
+        },
+        {
+            "slug": "marcpo-restini",
+            "name": "MARCOP RESTINI",
+            "image": "assets/img/directors1.png"
+        }
+    ]
+}

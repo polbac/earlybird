@@ -1,0 +1,27 @@
+{
+    "detail": {
+        "title": "BARDIA ZEINALI",
+        "body": "Grinder mocha espresso extraction, cup shop whipped sugar froth. Mazagran, so, espresso grounds et trifecta doppio flavour. Steamed, mug, carajillo breve, plunger pot half and half, variety in froth latte aged white. Grinder mocha espresso extraction, cup shop whipped sugar froth. Mazagran, so, espresso grounds et trifecta doppio flavour. Steamed, mug, carajillo breve, plunger pot half and half, variety in froth latte aged white.",
+        "video": "/assets/videos/sample-mp4-file-small.mp4",
+        "related": [
+            {
+                "slug": "video-1",
+                "name": "Eu aftertaste rich, galão steamed at flavour cream",
+                "thumb": "assets/img/1.png",
+                "description": "Grinder mocha espresso extraction, cup shop whipped sugar froth. Mazagran, so, espresso grounds et trifecta doppio flavour. Steamed, mug, carajillo breve, plunger pot half and half, variety in froth latte aged white."
+            },
+            {
+                "slug": "video-2",
+                "name": "Eu aftertaste rich, galão steamed at flavour cream",
+                "thumb": "assets/img/2.png",
+                "description": "Grinder mocha espresso extraction, cup shop whipped sugar froth. Mazagran, so, espresso grounds et trifecta doppio flavour. Steamed, mug, carajillo breve, plunger pot half and half, variety in froth latte aged white."
+            },
+            {
+                "slug": "video-3",
+                "name": "Eu aftertaste rich, galão steamed at flavour cream",
+                "thumb": "assets/img/3.png",
+                "description": "Grinder mocha espresso extraction, cup shop whipped sugar froth. Mazagran, so, espresso grounds et trifecta doppio flavour. Steamed, mug, carajillo breve, plunger pot half and half, variety in froth latte aged white."
+            }
+        ]
+    }
+}
