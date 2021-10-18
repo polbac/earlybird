@@ -5,6 +5,6 @@
     },
     "services": {
         "title": "SERVICES",
-        "body": "<span>OUR EXPERTISE</span><br/><br/>FILM AND CONTENT<br/>PRODUCTION<br/><br/>SCRIPTWRITING<br/><br/>SOCIAL MEDIA<br/>WEB, MOBILE AND VOICE<br/>DEVELOPMENT<br/><br/>TECH INNOVATION"
+        "body": "<div class='block'>FILM AND CONTENT<br/>PRODUCTION</div><div class='block'>SCRIPTWRITING</div><div class='block'>SOCIAL MEDIA<br/>WEB, MOBILE AND VOICE<br/>DEVELOPMENT</div><div class='block'>TECH INNOVATION</div>"
     }
 }

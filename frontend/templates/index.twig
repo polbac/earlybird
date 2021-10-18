@@ -1,11 +1,23 @@
 {{ include('partials/header.twig') }}
-    
+    <div class="preloading">
+        <img src="assets/img/preload.svg" />
+    </div>
+
     <section class="landing">
+        
         <div class="egg">
-            <img src="assets/img/egg1.png" />
+            <div class="egg-wrapper">
+                <img src="assets/img/egg1.png" class="logo-1" />
+                <img src="assets/img/egg2.png" class="logo-2"  />
+                <img src="assets/img/egg3.png" class="logo-3"  />
+                <img src="assets/img/egg4.png" class="logo-4"  />
+            </div>
+        </div>
+        <div class="instructions">
+            KEEP SCROLLING DOWN
         </div>
         <h2>
-            earlybird
+            <img width="100%" src="{{initPath}}/assets/img/EARLYBIRD_LOGO_BLANCO.svg" />
         </h2>
 
         <div class="landing-legend column">

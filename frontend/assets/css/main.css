@@ -2,16 +2,52 @@
     --white-color: #ebe9e1;
     --black-color: #030303;
     
-    --section-margin: 2.5vw;
+    --section-margin: 2.75vw;
     --work-item-margin: 2vh;
 
     --plyr-color-main: #ebe9e1;
+    --plyr-color-secondary: #ebe9e1;
     
   }
 
-  .plyr__control svg{
-      fill: #030303 !important;
+  .contact-open .branding-logo-white{
+      display: none !important;
   }
+.plyr__control.plyr__control--overlaid{
+    background: #030303;
+}
+  .plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true]{
+      background: transparent !important;
+  }
+
+  .plyr__control svg{
+      fill: #ebe9e1 !important;
+  }
+.preloading{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    background: var(--black-color);
+    pointer-events: none;
+}
+
+.preloading img{
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preloading.hide{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
 .hidden{
     display: none;
 }
@@ -64,10 +100,14 @@ h1 a{
 }
 
 /* navigation & header */
+header.show{
+    display: flex !important;
+}
 header{
+    display: none !important;
     position: fixed;
     top: 0;
-    padding-top: 20px;
+    padding-top: var(--section-margin);
     left: 0;
     right: 0;
     padding-left: var(--section-margin);
@@ -77,13 +117,13 @@ header{
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
     transition: color 1s ease, background-color 1s ease;
-    
+    z-index: 9999999;
 }
 
 header nav a{
     font-family: 'Favorit Mono';
-    font-size: 1.25vw;
-    margin-right: 20px;
+    font-size: 1vw;
+    margin-right: 2vw;
 }
 
 header nav a.active{
@@ -107,6 +147,45 @@ section.landing{
 
 section.landing.show{
     display: block;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+
+}
+
+section.landing.show.opacity{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.landing .egg .logo-1,
+.landing .egg .logo-2,
+.landing .egg .logo-3,
+.landing .egg .logo-4{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+
+    position:absolute;
+}
+
+.landing .egg .logo-1.show,
+.landing .egg .logo-2.show,
+.landing .egg .logo-3.show,
+.landing .egg .logo-4.show{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
 }
 
 .landing .egg{
@@ -131,14 +210,44 @@ section.landing.show{
     top: 300vh;
     position: absolute;
 }
+.landing .egg .egg-wrapper img{
+    width: 100%;
+}
 
-.landing .egg img{
+.instructions{
+    font-family: 'Favorit Mono';
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    color: var(--white-color);
+    font-size: 1vw;
+    z-index: 9999;
+    text-align: center;
+    transition: .5s all ease-out;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transform: translate(-50%, 0);
+    background: var(--black-color);
+}
+
+.instructions.hide{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.landing .egg .egg-wrapper{
     position: fixed;
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     height: 30vh;
     z-index: 2;
+    width: 10vw;
 }
 
 .landing-legend{
@@ -146,11 +255,11 @@ section.landing.show{
     margin-right: var(--section-margin);
     margin-bottom: var(--section-margin);
     justify-content: space-between;
-    
+    margin-top: 20vh;
 }
 
 .landing-legend p{
-    font-size: 2.5vw;
+    font-size: 2vw;
     max-width: 50%;
 }
 
@@ -158,22 +267,43 @@ section.landing.show{
 .landing-legend .social a{
     display: block;
     font-size: 0.87vw;
-    margin-bottom: 1.5vh;
 }
 
 .landing-legend .social div{
-    margin-bottom: 2vh;
+    margin-bottom: 4.5vh;
 }
 
 .landing-legend .social{
     font-family: 'Favorit Mono';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .landing h2{
-    font-family: 'Monument Extended';
-    text-align: center;
-    font-size: 15.2vw;
-    z-index: 1;
+    margin-left: var(--section-margin);
+    margin-right: var(--section-margin);
+}
+
+.branding-logo-black{
+    display: none;
+}
+
+.branding-logo-black,
+.branding-logo-white{
+    width: 15vw;
+}
+
+body.black .branding-logo-white{
+    display: block;
+}
+
+.column.black .branding-logo-black{
+    display: block;
+}
+
+.column .branding-logo-white{
+    display: none;
 }
 
 
@@ -185,15 +315,19 @@ section.work{
     padding-top: 50px;
 
     font-family: 'Favorit Mono';
+    position: relative;
+    z-index: 99999;
 }
 section.work .categories{
     color: var(--black-color);
-    margin-top: 1vh;
-    margin-bottom: 2.5vh;
+    margin-top: 7vh;
+    margin-bottom: 6.5vh;
     font-weight: 200;
     font-size: 1.75vw;
 }
-
+section.work .categories a:first-of-type{
+    margin-left: 0;
+}
 section.work .categories a{
     color: var(--black-color);
     font-family: 'Monument Extended';
@@ -248,7 +382,7 @@ section.detail .items .item p.work-title{
     padding-top: var(--work-item-margin);
     padding-bottom: var(--work-item-margin);
     text-transform: uppercase;
-    font-size: 1.2vw;
+    font-size: 0.9vw;
 }
 
 section.director-detail .items .item p.description,
@@ -292,12 +426,12 @@ section.work .items .item .description{
     right: 0;
     background: rgba(0,0,0,0.8);
     color: var(--white-color);
-    padding: 50px 30px;
+    padding: 6vw 6vw;
     opacity: 0;
     transition: 1s all ease;
     font-family: 'Neue Montreal';
-    line-height: 2.5vw;
-    font-size: 2vw;
+    line-height: 1.7vw;
+    font-size: 1.2vw;
 }
 
 
@@ -314,9 +448,22 @@ section.work .items .item .description{
     background: var(--white-color);
     color: var(--black-color);
     display: none;
+    z-index: 999999;
     
     font-family: 'Monument Extended';
     font-size: 2vw;
+}
+
+#contact-section .contact-info-text,
+#contact-section .sendus,
+#contact-section .contact-info-text{
+    display: block;
+}
+
+#contact-section .contact-info-text,
+#contact-section a.email{
+    margin-bottom: 1.2vw;
+    display: block;
 }
 
 #contact-section.open{
@@ -325,15 +472,12 @@ section.work .items .item .description{
 }
 
 #contact-section .by-email{
-    font-size: 0.75rem;
+    font-size: 0.87rem;
     margin-bottom: 50px;
     font-family: 'Favorit Mono';
 }
 
-#contact-section .form-contact{
-    margin-top: 50px;
-    
-}
+
 
 #contact-section .close{
     cursor: pointer;
@@ -352,6 +496,10 @@ section.work .items .item .description{
     width: 300px;
     margin-right: 10px;
     outline: none;
+    padding: 10px;
+    font-family: 'Favorit Mono';
+    box-sizing: border-box;
+    font-size: 0.87rem;
 }
 
 #contact-section .send-button{
@@ -381,11 +529,12 @@ section.about > div h3{
     font-family: 'Monument Extended';
     font-size: 3.5vw;
     font-weight: normal;
+    position: relative;
 }
 
 section.about span{
     font-family: 'Favorit Mono';    
-    font-size: 1.3vw;
+    font-size: 0.87vw;
 }
 
 section.about .we p{
@@ -396,6 +545,24 @@ section.about .services{
     font-family: 'Monument Extended';
     font-weight: 300;
     font-size: 1.75vw;
+}
+
+section.about .services span.title{
+    margin-bottom: 33px;
+    display: block;
+    margin-top: 32px;
+}
+
+section.about .title-wrapper{
+    position: relative;
+}
+
+section.about .services div.block{
+    font-family: 'Monument Extended';
+    font-weight: 300;
+    font-size: 1.75vw;
+    display: block;
+    margin-bottom: 1vw;
 }
 
 /* footer */
@@ -473,6 +640,7 @@ section.director-detail h3,
 section.detail h3{
     font-family: 'Monument Extended';
     font-size: 2vw;
+    letter-spacing: 0.3vw;
 }
 
 section.director-detail .video-wrapper{
@@ -487,7 +655,7 @@ section.director-detail .video-wrapper .body{
 }
 
 section.director-detail h3{
-    font-size: 9vw;
+    font-size: 8vw;
 }
 
 section.director-detail .body{
@@ -495,6 +663,7 @@ section.director-detail .body{
 }
 section.detail .body{
     column-count: 2;
+    font-size: 1.2vw;
 }
 
 section.director-detail video,
@@ -560,6 +729,7 @@ section.directors{
     padding-top: 100px;
     margin-left: var(--section-margin);
     margin-right: var(--section-margin);
+    margin-bottom: 40px;
 }
 
 section.directors .photo{
@@ -669,6 +839,8 @@ section.directors .photo{
         align-items: center;
         text-align: center;
         justify-content: center;
+        margin-top: 1vh;
+        margin-bottom: 2.5vh;
     }
 
     section.work .items .item{
@@ -869,13 +1041,17 @@ section.directors .photo{
     }
 
     #contact-section input{
-        margin-top: 40px;
+        margin-top: 20px;
         margin-bottom: 40px;
         font-family: 'Monument Extended';
         font-size: 14px;
         text-transform: uppercase;
         padding-bottom: 9px;
         text-align: center;
+    }
+
+    .contact-text.form-contact{
+        margin-top: 30px;
     }
 
     #contact-section .send-button{
@@ -920,4 +1096,32 @@ section.directors .photo{
         width: 100%;
     }
     
+    .instructions{
+        font-size: 3vw;
+    }
+
+    .landing .egg .egg-wrapper{
+        width: 40vw;
+    }
+
+    section.about .services span.title{
+        margin: 0;
+    }
+
+    section.about .services div.block{
+        font-size: 2.75vw;
+    }
+
+    section.about .services h3{
+        margin-bottom: 3vw;
+    }
+
+    .branding-logo-black, .branding-logo-white{
+        width: 23vw;
+        margin-top: 14px;
+    }
+
+    section.director-detail .video-wrapper .plyr{
+        width: 100%;
+    }
 }

@@ -6,6 +6,8 @@ import Plyr from 'plyr';
 
 if (document.querySelector('section.landing')) {
     new Landing()
+} else {
+    document.querySelector('header').classList.add('show')
 }
 
 if (document.querySelector('section.work')) {
@@ -37,7 +39,7 @@ const video = document.querySelector("video")
 
 if (video) {
     const player = new Plyr('video', {
-        controls: ['play-large']
+        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume',  'fullscreen']
     });
 
 }

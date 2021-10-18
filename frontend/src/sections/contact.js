@@ -18,10 +18,13 @@ export class Contact{
 
         if (this.sectionContact.classList.contains('open')) {
             this.sectionContact.classList.remove('open')
+            document.querySelector('body').classList.remove('contact-open')
             if (document.querySelector('body').classList.contains('black')) {
+                
                 this.header.classList.remove('black')
             }
         } else {
+            document.querySelector('body').classList.add('contact-open')
             this.sectionContact.classList.add('open')
             this.header.classList.add('black')
 
