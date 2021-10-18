@@ -1124,4 +1124,11 @@ section.directors .photo{
     section.director-detail .video-wrapper .plyr{
         width: 100%;
     }
+
+    
 }
+
+
+    section.director-detail .items .item p.description, section.detail .items .item p.description{
+        padding: 25px;
+    }
